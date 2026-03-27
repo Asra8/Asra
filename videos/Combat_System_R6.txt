@@ -1,0 +1,155 @@
+--By SillyFlex
+
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+local backpack = player:WaitForChild("Backpack")
+
+local function createTool(config)
+    local tool = Instance.new("Tool")
+    tool.Name = config.name
+    tool.RequiresHandle = false
+    tool.CanBeDropped = false
+
+    local gui = Instance.new("ScreenGui")
+    gui.Name = config.name .. "Gui"
+    gui.ResetOnSpawn = false
+    gui.Enabled = false
+    gui.Parent = player:WaitForChild("PlayerGui")
+
+    local button = Instance.new("TextButton")
+    button.Size = UDim2.new(0, 140, 0, 50)
+    button.Position = UDim2.new(0.5, -70, 0, 20)
+    button.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+    button.TextColor3 = Color3.new(1, 1, 1)
+    button.Text = config.buttonText
+    button.Font = Enum.Font.GothamBold
+    button.TextSize = 20
+    button.Parent = gui
+
+    local active = false
+    local cooldown = false
+    local animPlaying = false
+
+    button.MouseButton1Click:Connect(function()
+        if active or cooldown then return end
+        if config.animationId then
+            active = true
+            cooldown = true
+
+            local char = player.Character
+            if not char then return end
+            local hrp = char:FindFirstChild("HumanoidRootPart")
+            local humanoid = char:FindFirstChildOfClass("Humanoid")
+            if not hrp or not humanoid then return end
+
+            local anim = Instance.new("Animation")
+            anim.AnimationId = "rbxassetid://" .. config.animationId
+            local track = humanoid:LoadAnimation(anim)
+            track:Play()
+
+            local start = tick()
+            while tick() - start < config.duration do
+                local speed = math.clamp((tick() - start) / config.duration, 0, 1) * 75
+                hrp.Velocity = config.velocity(hrp) * speed
+                task.wait()
+            end
+
+            track:Stop()
+            active = false
+            task.delay(config.cooldown, function()
+                cooldown = false
+            end)
+        elseif config.punchAnimation then
+            if animPlaying then return end
+            animPlaying = true
+
+            local char = player.Character
+            if not char then return end
+            local humanoid = char:FindFirstChildOfClass("Humanoid")
+            if not humanoid then return end
+
+            local anim = Instance.new("Animation")
+            anim.AnimationId = "rbxassetid://" .. config.punchAnimation
+            local track = humanoid:LoadAnimation(anim)
+            track:Play()
+
+            track.Stopped:Connect(function()
+                animPlaying = false
+            end)
+        end
+    end)
+
+    tool.Equipped:Connect(function()
+        gui.Enabled = true
+    end)
+
+    tool.Unequipped:Connect(function()
+        gui.Enabled = false
+    end)
+
+    -- Handling the ability animation timing after usage
+    local function resumeIdleAnimationAfter(duration)
+        task.wait(duration)
+        -- The idle animation no longer exists
+    end
+
+    -- Slide: Comes back in 1.5 seconds
+    if config.name == "Slide" then
+        button.MouseButton1Click:Connect(function()
+            if not cooldown then
+                -- Slide ability logic
+                task.delay(1.5, function() resumeIdleAnimationAfter(1.5) end)
+            end
+        end)
+    end
+
+    -- Backdash: Comes back in 0.5 seconds
+    if config.name == "Backdash" then
+        button.MouseButton1Click:Connect(function()
+            if not cooldown then
+                -- Backdash ability logic
+                task.delay(0.5, function() resumeIdleAnimationAfter(0.5) end)
+            end
+        end)
+    end
+
+    -- Punch: Comes back in 1 second
+    if config.name == "Punch" then
+        button.MouseButton1Click:Connect(function()
+            if not cooldown then
+                -- Punch ability logic
+                task.delay(1, function() resumeIdleAnimationAfter(1) end)
+            end
+        end)
+    end
+
+    tool.Parent = backpack
+end
+
+createTool({
+    name = "Slide",
+    buttonText = "Forward",
+    animationId = 181525546,
+    duration = 1.5,
+    cooldown = 2,
+    velocity = function(hrp)
+        return hrp.CFrame.LookVector
+    end
+})
+
+createTool({
+    name = "Backdash",
+    buttonText = "Backdash",
+    animationId = 120735762,
+    duration = 0.5,
+    cooldown = 1,
+    velocity = function(hrp)
+        return -hrp.CFrame.LookVector
+    end
+})
+
+createTool({
+    name = "Punch",
+    buttonText = "Punch",
+    punchAnimation = 204062532
+})
