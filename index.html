@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <title>ASRA</title>
+</head>
+<body>
+<!-- 
+<div class="cloud">
+    <img  id="cloud1" class="fade-in slide-in" src="images/clouds.png">
+    <img  id="cloud2" class="fade-in slide-in"src="images/clouds.png">
+    <img id="cloud3" class="fade-in slide-in"src="images/clouds.png">
+    <img id="cloud4" class="fade-in slide-in"src="images/clouds.png">
+    <img id="cloud5" class="fade-in slide-in"src="images/clouds.png">
+    <img id="cloud6" class="fade-in slide-in"src="images/clouds.png">
+    <img id="cloud7" class="fade-in slide-in"src="images/clouds.png">
+    <img id="cloud8" class="fade-in slide-in"src="images/clouds.png">
+</div> -->
+<!-- NAV -->
+<div id="pageButtons">
+
+    <!-- CENTER: NAV -->
+    <div class="headerCenter">
+        <button onclick="scrollToSection('home')">HOME</button>
+        <button onclick="scrollToSection('showcases')">SHOWCASES</button>
+        <button onclick="scrollToSection('work')">PAST WORKS</button>
+        <button onclick="scrollToSection('pricing')">PRICING</button>
+    </div>
+
+    <!-- RIGHT: ICONS -->
+    <div class="headerRight">
+        <a href="https://discord.com/users/394327820052070407" target="_blank" class="iconBtn discord"></a>
+        <a href="https://www.roblox.com/users/172986872/profile" target="_blank" class="iconBtn roblox"></a>
+    </div>
+
+</div>
+<!-- SECTION 1: SPACE / HERO -->
+<section id="home" class="section hero">
+    <div class="stars"></div>
+
+    <h1 class="fade-in">ASRA</h1>
+    <h2 class="fade-in">BRING YOUR PROJECTS TO LIFE</h2>
+    <h3 class="fade-in">GAME DEVELOPER</h3>
+
+    <div class="cardContainer">
+        <div class="infoFrames slide-in">
+            <div class="cardHeader">CODE</div>
+            <p>Clean, scalable, and structured systems built for performance and long-term growth.</p>
+        </div>
+
+        <div class="infoFrames slide-in">
+            <div class="cardHeader">ABOUT ME</div>
+            <p>5+ years of Roblox development experience building systems, mechanics, and full game features.</p>
+        </div>
+
+        <div class="infoFrames slide-in">
+            <div class="cardHeader">WHAT TO EXPECT</div>
+            <p>Clear communication, fast delivery, and consistent updates throughout your project.</p>
+        </div>
+
+        <div class="infoFrames slide-in">
+            <div class="cardHeader">POLICY</div>
+            <p>Customer-first approach. One free revision included. Delivery in 1–2 days depending on scope.</p>
+        </div>
+    </div>
+</section>
+
+<section id="showcases" class="section sky showcaseSection">
+    <div class="stars"></div>
+
+    <h2 class="sectionTitle fade-in">— SHOWCASES —</h2>
+    <h3 id="showcaseCategory">COMBAT</h3>
+
+    <div class="carousel">
+
+        <button class="arrow left">&#10094;</button>
+
+        <div class="carouselTrack">
+
+            <div class="carouselDots">
+            <span class="dotIndicator active"></span>
+            <span class="dotIndicator"></span>
+            <span class="dotIndicator"></span>
+            <span class="dotIndicator"></span>
+            </div>
+            <!-- COMBAT -->
+            <div class="carouselPage active slide-in">
+                <video  autoplay loop muted src="videos/lightning.mp4"></video>
+                <video autoplay loop muted src="videos/r6combat.mp4"></video>
+                <video autoplay loop muted src="videos/sai.mp4"></video>
+                <video autoplay loop muted src="videos/cutscene.mov"></video>
+            </div>
+
+            <!-- FPS/GUN SYSTEMS -->
+            <div class="carouselPage slide-in">
+                <video autoplay loop muted src="videos/gun3.mp4"></video>
+                <video autoplay loop muted src="videos/gun4.mp4"></video>
+                <video autoplay loop muted src="videos/gun5.mp4"></video>
+                <video autoplay loop muted src="videos/gun6.mp4"></video>
+            </div>
+
+            <!-- UI -->
+            <!-- <div class="carouselPage slide-in">
+                <video autoplay loop muted src="videos/ui1.mp4"></video>
+                <video autoplay loop muted src="videos/ui2.mp4"></video>
+                <video autoplay loop muted src="videos/ui3.mp4"></video>
+                <video autoplay loop muted src="videos/ui4.mp4"></video>
+            </div> -->
+
+            <!-- VEHICLES -->
+            <!-- <div class="carouselPage slide-in">
+                <video autoplay loop muted src="videos/veh1.mp4"></video>
+                <video autoplay loop muted src="videos/veh2.mp4"></video>
+                <video autoplay loop muted src="videos/veh3.mp4"></video>
+                <video autoplay loop muted src="videos/veh4.mp4"></video>
+            </div> -->
+
+        </div>
+
+        <button class="arrow right">&#10095;</button>
+    </div>
+</section>
+
+<section id="work" class="section mid gameSection">
+    <div class="stars"></div>
+
+    <h2 class="sectionTitle fade-in">— PAST WORK —</h2>
+
+    <div class="gameCarousel">
+
+        <!-- Arrows -->
+        <button class="gameArrow left">&#10094;</button>
+        <button class="gameArrow right">&#10095;</button>
+
+        <!-- Track -->
+        <div class="gameTrack">
+
+            <!-- GAME 1 -->
+            <a href="https://www.roblox.com/games/117229340550226/Draw-a-BRAINROT" target="_blank" class="gameSlide active">
+                <div class="gameCard">
+                    <div class="gameMain">
+                        <h3 class="gameTitle">Draw-a-BRAINROT</h3>
+                        <img src="images/game1.webp" class="gameImage">
+                    </div>
+                    <div class="gameStats">
+                        <div class="stat"><span class="dot red"></span><p>33.2MVisits</p></div>
+                        <div class="stat"><span class="dot green"></span><p>174 Playing</p></div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- GAME 2 -->
+            <a href="https://www.roblox.com/games/10101846733/ZOMBIE-INVASION" target="_blank"class="gameSlide">
+                <div class="gameCard">
+                    <div class="gameMain">
+                        <h3 class="gameTitle">ZOMBIE-INVASION</h3>
+                        <img src="images/game2.webp" class="gameImage">
+                    </div>
+                    <div class="gameStats">
+                        <div class="stat"><span class="dot red"></span><p>53.9M Visits</p></div>
+                        <div class="stat"><span class="dot green"></span><p>189 Playing</p></div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- GAME 3 -->
+            <a href="https://www.roblox.com/games/6720959312/LootQuest" target="_blank"class="gameSlide">
+                <div class="gameCard">
+                    <div class="gameMain">
+                        <h3 class="gameTitle">LootQuest</h3>
+                        <img src="images/game3.webp" class="gameImage">
+                    </div>
+                    <div class="gameStats">
+                        <div class="stat"><span class="dot red"></span><p>17.2M Visits</p></div>
+                        <div class="stat"><span class="dot green"></span><p>72 Playing</p></div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- GAME 4 -->
+            <a href="https://www.roblox.com/games/107573139811370/Anime-Crusaders"target="_blank" class="gameSlide">
+                <div class="gameCard">
+                    <div class="gameMain">
+                        <h3 class="gameTitle">Anime Crusaders</h3>
+                        <img src="images/game4.webp" class="gameImage">
+                    </div>
+                    <div class="gameStats">
+                        <div class="stat"><span class="dot red"></span><p>107.6M Visits</p></div>
+                        <div class="stat"><span class="dot green"></span><p>2,800 Playing</p></div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- GAME 5 -->
+            <a href="https://www.roblox.com/games/82338394608938/My-Boba-Store"target="_blank" class="gameSlide">
+                <div class="gameCard">
+                    <div class="gameMain">
+                        <h3 class="gameTitle">My Boba Store</h3>
+                        <img src="images/game5.webp" class="gameImage">
+                    </div>
+                    <div class="gameStats">
+                        <div class="stat"><span class="dot red"></span><p>4.0M Visits</p></div>
+                        <div class="stat"><span class="dot green"></span><p>2,197 Playing</p></div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- GAME 6 -->
+            <a href="https://www.roblox.com/games/90568084448279/One-Tap" target="_blank"class="gameSlide">
+                <div class="gameCard">
+                    <div class="gameMain">
+                        <h3 class="gameTitle">[FPS] One Tap</h3>
+                        <img src="images/game6.webp" class="gameImage">
+                    </div>
+                    <div class="gameStats">
+                        <div class="stat"><span class="dot red"></span><p>78.4M Visits</p></div>
+                        <div class="stat"><span class="dot green"></span><p>11,700 Playing</p></div>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+
+        <!-- DOTS -->
+        <div class="gameDots">
+            <span class="dotIndicator active"></span>
+            <span class="dotIndicator"></span>
+            <span class="dotIndicator"></span>
+            <span class="dotIndicator"></span>
+            <span class="dotIndicator"></span>
+            <span class="dotIndicator"></span>
+        </div>
+
+    </div>
+</section>
+<!-- SECTION 4: GROUND -->
+<section id="pricing" class="section ground">
+    <h2 class="sectionTitle fade-in">— PRICING —</h2>
+
+    <!-- NEW COMMISSION CARDS -->
+    <div class="pricingContainer">
+
+
+        <div id="smallcom"class="pricingCard fade-in slide-in">
+    <div class="cardHeader notch">💰 Small Commissions</div>
+    <p>
+        Commissions start at 10$ USD and must be paid through PayPal or in Robux (DevEx equivalent).
+        Small commissions can be paid up-front or upon completion.
+    </p>
+</div>
+
+<div id="mediumcom" class="pricingCard fade-in slide-in">
+    <div id="mediumcomnotch" class="cardHeader notch">📦 Medium–Large Commissions</div>
+    <p>
+       <p>
+    Payments may be made in full or in installments, depending on the scope of the project and discussed in DMs.
+    Customer satisfaction is a top priority. One complimentary revision is included, with any further revisions subject to an additional fee.
+</p>
+    </p>
+</div>
+
+    </div>
+
+    <img id="grass" src="images/grass.png">
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
